@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>card challenge</title>
+    <script src="public/js/reqirements.js"></script>
+    <link href="public/css/app.css" rel="stylesheet" />
+</head>
+
+<body ng-app="CardChallenge">
+    <div class="row small-centered">
+        <div  ng-controller="mainController as mainctrl">
+            <!--main point to scope of controller-->
+            <!--we make every cards in here-->
+            <!--<div class="column small-centered small-12 medium-8 large-6 card" ng-class="mainctrl.cardsInfo===mainctrl.activeCard?'active':''" ng-repeat="cardInfo in mainctrl.cardsInfo">-->
+            <div class="column small-centered small-12 medium-8 large-6 card {{cardInfo.tag}}" ng-if="$index==mainctrl.activeCardIndex" ng-repeat="cardInfo in mainctrl.cardsInfo">
+                <card cardInfo="cardInfo"></card>
+            </div>
+            <button class="button primary radius" ng-click="mainctrl.tryAnother()">Try</button>
+        </div>
+    </div>
+</body>
+
+<!-- Modules -->
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/mainController.js"></script>
+
+<!-- Services -->
+<script src="js/services/dataLoader.js"></script>
+
+<!-- directives -->
+<script src="js/directives/card.js"></script>
+
+</html>

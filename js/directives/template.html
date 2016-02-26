@@ -1,0 +1,38 @@
+<!--without edit condition we show them as normal-->
+<div ng-if="!edit">
+    <h2 class="text-center">{{cardInfo.title}}</h2>
+    <p class="text-center">{{cardInfo.description}}</p>
+</div>
+
+<!--on edit we use inputs to get data-->
+<div ng-if="edit">
+    <input ng-model="cardInfo.title">
+    <input ng-model="cardInfo.description">
+</div>
+
+<!--toggle edit condition-->
+<a ng-click="edit=!edit">{{edit?'ok':'edit'}}</a>
+
+<!--use audio if code is 2-->
+<div ng-if="cardInfo.code==2" class="text-center">
+    <audio controls>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<!--use css animation if code is 1-->
+<div class="">
+    <div ng-if="cardInfo.code==1" class="loader-inner ball-clip-rotate-multiple">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<!--use an image if code is 0-->
+<div ng-if="cardInfo.code==0">
+    <div class="text-center">
+        <img src="image/js.png" alt="js is love">
+    </div>
+</div>

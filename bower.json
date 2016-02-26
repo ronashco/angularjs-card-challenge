@@ -1,0 +1,16 @@
+{
+  "name": "AngularJS Card Challenage",
+  "homepage": "https://github.com/fingerpich/angularjs-card-challenge",
+  "authors": [
+    "mojtaba zarei <zarei.bs@gmail.com>"
+  ],
+  "description": "its a test",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "angularjs#^1.5.0",
+    "foundation": "^5.5.3",
+    "loaders.css": "^0.1.2"
+  }
+}

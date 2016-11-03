@@ -579,6 +579,23 @@ html, body {
   text-align: center;
 }
 
+.card .edit {
+  position: absolute;
+  right: 80px;
+  top: 10px;
+  border-radius: 2px;
+  background-color: #FCB941;
+  font-size: .75em;
+  padding: 5px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+}
+.card .edit img {
+  display: block;
+  max-width: 100%;
+}
+
 .card .title {
   margin: 10px auto;
   padding: 10px 5px;

@@ -12,8 +12,23 @@ cardsApp.controller('cardsController', function($scope, $sce, cardsService, stor
   $scope.sound = '';
   // To handle loading state of application
   $scope.isLoading = false;
+  // To handle editing state of application
+  $scope.isEditing = false;
   // To handle retry
   $scope.try = null;
+
+  $scope.saveEdit = function() {
+
+    $scope.cardsSet.map(function(crd) {
+      if (angular.toJson(crd) == angular.toJson($scope.card)) {
+        console.log('match', crd);
+        crd = $scope.card;
+      }
+    });
+
+    storageService.set('cards', {cards: $scope.cardsSet});
+
+  };
 
   // Loading state Helper
   function setLoadingState(bool) {
@@ -61,6 +76,7 @@ cardsApp.controller('cardsController', function($scope, $sce, cardsService, stor
 
       } )
     } else {
+      console.log(fetchCards.data.cards)
       // Save card to scope
       $scope.card = cardsService.getCard(fetchCards.data.cards);
       // cache card sets

@@ -30,13 +30,20 @@
 
   <div class="card-wrapper">
 
-    <div class="card" ng-class="{'card-sport': card.tag == 'sport', 'card-art': card.tag == 'art', 'card-fun': card.tag == 'fun', 'card-animated': card.code == 1}">
+    <div class="card" ng-click="isEditing = false" ng-class="{'card-sport': card.tag == 'sport', 'card-art': card.tag == 'art', 'card-fun': card.tag == 'fun', 'card-animated': card.code == 1}">
 
+      <div class="edit" ng-click="isEditing = !isEditing; $event.stopPropagation()"><img src="assets/img/edit.svg" alt="Edit"></div>
       <div class="badge">{{ card.tag|uppercase }}</div>
 
-      <div class="title">{{ card.title }}</div>
+      <div class="title">
+        <div ng-show="!isEditing">{{ card.title }}</div>
+        <input ng-show="isEditing" ng-click="$event.stopPropagation()" ng-model="card.title" type="text" ng-change="saveEdit()">
+      </div>
 
-      <div class="desc">{{ card.description }}</div>
+      <div class="desc">
+        <div ng-show="!isEditing">{{ card.description }}</div>
+        <textarea ng-show="isEditing" ng-click="$event.stopPropagation()" ng-model="card.description" ng-hange="saveEdit()"></textarea>
+      </div>
 
       <div class="pic" ng-if="card.code == 0">
         <img ng-src="{{card.image}}" alt="{{ card.title }}">

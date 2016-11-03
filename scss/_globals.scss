@@ -1,0 +1,22 @@
+html, body {
+  font-family: $font-family;
+  background-color: $bg;
+  height: 100%;
+}
+
+.container {
+  display: block;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  position: absolute;
+  top: 50%; left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.row {
+  margin: 20px auto;
+  text-align: center;
+}

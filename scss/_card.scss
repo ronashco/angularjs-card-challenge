@@ -1,0 +1,99 @@
+@keyframes card {
+  0% {
+    transform: scale(.6);
+    opacity: 0
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1
+  }
+}
+
+.card {
+  width: 300px;
+  height: auto;
+  min-height: 200px;
+  border-radius: 4px;
+  color: $light;
+  padding: 25px;
+  margin: 0 auto;
+  position: relative;
+
+  &-animated {
+    animation: card .6s ease forwards
+  }
+}
+
+.card .badge {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+  background-color: $card-quaternary;
+  font-size: .75em;
+  padding: 6px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.card .edit {
+  position: absolute;
+  right: 80px;
+  top: 10px;
+  border-radius: 2px;
+  background-color: $card-quaternary;
+  font-size: .75em;
+  padding: 5px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.card .title {
+  margin: 10px auto;
+  padding: 10px 5px;
+  font-size: 1.25em;
+}
+
+.card .desc {
+  margin: 10px auto;
+  padding: 10px 5px;
+  font-size: .95em;
+}
+
+.card .pic {
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 4px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+// Variations of cards Theme
+.card-sport {
+  background-color: $card-primary;
+}
+.card-art {
+  background-color: $card-secondary;
+}
+.card-fun {
+  background-color: $card-tertiary;
+}
+
+//Wrapper
+.card-wrapper {
+  height: 400px;
+}

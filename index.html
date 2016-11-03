@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Cards Challenge</title>
+  <meta name="description" content="This is the card challenge solved by Farzad YZ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body ng-app="cardsApp" ng-controller="cardsController">
+
+<!--[if lte IE 9]>
+<h1>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your
+  browser</a> to improve your experience and security.</h1>
+<![endif]-->
+
+<!-- Audio element to play cards which have sound -->
+<audio ng-src="{{sound}}" ng-if="card.code == 2" autoplay></audio>
+
+<!-- Loading -->
+<div ng-show="isLoading" class="loading-wrapper">
+  <div class="loading"></div>
+  <p>Initiating...</p>
+</div>
+
+<!-- Cards Container-->
+<div class="container" ng-show="!isLoading">
+
+  <div class="card-wrapper">
+
+    <div class="card" ng-click="isEditing = false" ng-class="{'card-sport': card.tag == 'sport', 'card-art': card.tag == 'art', 'card-fun': card.tag == 'fun', 'card-animated': card.code == 1}">
+
+      <div class="edit" ng-click="isEditing = !isEditing; $event.stopPropagation()"><img src="assets/img/edit.svg" alt="Edit"></div>
+      <div class="badge">{{ card.tag|uppercase }}</div>
+
+      <div class="title">
+        <div ng-show="!isEditing">{{ card.title }}</div>
+        <input ng-show="isEditing" ng-click="$event.stopPropagation()" ng-model="card.title" type="text" ng-change="saveEdit()">
+      </div>
+
+      <div class="desc">
+        <div ng-show="!isEditing">{{ card.description }}</div>
+        <textarea ng-show="isEditing" ng-click="$event.stopPropagation()" ng-model="card.description" ng-hange="saveEdit()"></textarea>
+      </div>
+
+      <div class="pic" ng-if="card.code == 0">
+        <img ng-src="{{card.image}}" alt="{{ card.title }}">
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <button class="button button-try" ng-click="try()">Try New Card</button>
+  </div>
+
+</div>
+
+<!-- Libs -->
+<script src="assets/lib/angular.min.js"></script>
+
+<!-- App -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/controllers/cardsController.js"></script>
+<script src="assets/js/services/cardsService.js"></script>
+<script src="assets/js/services/storageService.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "angularjs-card-challenge",
+  "version": "1.0.0",
+  "description": "An angular development challenge for showing cards in a responsive web application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farskid/angularjs-card-challenge.git"
+  },
+  "author": "Farzad YZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farskid/angularjs-card-challenge/issues"
+  },
+  "homepage": "https://github.com/farskid/angularjs-card-challenge#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
